@@ -1,0 +1,214 @@
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #1a1a1a;
+  --accent-color: #ff5e00; /* Zesty orange */
+  --border-color: #1a1a1a;
+  --font-heading: 'Caveat', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.logo {
+  max-width: 250px;
+  margin-bottom: 1rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+nav a {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  transform: translateY(-2px);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--text-color);
+  display: inline-block;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Hand-drawn border effect */
+  padding-bottom: 5px;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-style: wavy;
+}
+
+/* Container for standard pages */
+.content-wrapper {
+  margin-top: 2rem;
+}
+
+/* Hand-drawn box effect */
+.hand-drawn-box {
+  border: 3px solid var(--border-color);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 8px 8px 0px var(--border-color);
+  margin-bottom: 2rem;
+  transition: transform 0.2s;
+}
+
+.hand-drawn-box:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--border-color);
+}
+
+.spotlight {
+  background-color: #fff8f0;
+  border-color: var(--accent-color);
+  box-shadow: 8px 8px 0px var(--accent-color);
+}
+
+.show-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.show-item h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.show-item a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Artist List Styles */
+.artist-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.artist-card {
+  border: 2px solid var(--border-color);
+  border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.flyer {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  border: 3px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--border-color);
+  margin-bottom: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.placeholder-thumbnail {
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: white;
+}
+
+.artist-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.artist-card a {
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* Footer */
+footer {
+  margin-top: 5rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  border-top: 2px dashed var(--border-color);
+  padding-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+  .artist-list { grid-template-columns: 1fr; }
+}
